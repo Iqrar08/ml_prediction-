@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FWI Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, select {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Algerian Forest Fire - FWI Prediction</h2>
+
+```
+<form action="/predict_data" method="post">
+
+    
+    <input type="number" step="any" name="Temperature" placeholder="Temperature (°C)" required>
+    <input type="number" step="any" name="RH" placeholder="Relative Humidity (%)" required>
+    <input type="number" step="any" name="Ws" placeholder="Wind Speed" required>
+    <input type="number" step="any" name="Rain" placeholder="Rain (mm)" required>
+
+    <input type="number" step="any" name="FFMC" placeholder="FFMC" required>
+    <input type="number" step="any" name="DMC" placeholder="DMC" required>
+    <input type="number" step="any" name="DC" placeholder="DC" required>
+    <input type="number" step="any" name="ISI" placeholder="ISI" required>
+    <input type="number" step="any" name="BUI" placeholder="BUI" required>
+
+    <select name="Classes">
+        <option value="">Select Class</option>
+        <option value="0">Not Fire</option>
+        <option value="1">Fire</option>
+    </select>
+
+    <select name="Region">
+        <option value="">Select Region</option>
+        <option value="0">Bejaia</option>
+        <option value="1">Sidi-Bel Abbes</option>
+    </select>
+
+    <br><br>
+    <button type="submit">Predict FWI</button>
+
+</form>
+<h2>
+    the fwi prediction is {{result}} 
+</h2>
+```
+
+</div>
+
+</body>
+</html>
